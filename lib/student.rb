@@ -5,7 +5,7 @@ require 'interactive_record.rb'
 class Student < InteractiveRecord
 
   def self.table_name
-    self.downcased.pluralized
+    self.downcase.pluralized
   end
 
   def self.column_names
