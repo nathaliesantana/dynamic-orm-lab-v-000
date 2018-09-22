@@ -23,13 +23,11 @@ class Student < InteractiveRecord
 
   end
 
-  def initialize
-    student = Student.new
 
-    self.column_names.each do |column_name|
-      attr_accessor column_name.to_sym
-    end
-
+  def initialize(options={})
+    options.each do |property, value|
+      self.send("#{property}=", value)
+    end 
   end
 
 end
