@@ -24,6 +24,11 @@ class Student < InteractiveRecord
   end
 
   def initialize
+    student = Student.new
+
+    self.class.column_names.each do |column_name|
+      attr_accessor column_name.to_sym
+    end
 
   end
 
