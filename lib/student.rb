@@ -71,7 +71,7 @@ class Student < InteractiveRecord
     key = values[0].to_s
     value = values[1]
 
-    sql = "SELECT * FROM #{table_name} WHERE #{key} = #{value}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
     # binding.pry
     DB[:conn].execute(sql)
   end
