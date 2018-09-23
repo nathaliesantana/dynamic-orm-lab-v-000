@@ -68,7 +68,7 @@ class Student < InteractiveRecord
 
   def self.find_by(options)
     values = options.map{|k,v| key = k, value = v}.flatten
-    key = values[0]
+    key = values[0].to_s
     value = values[1]
 
     sql = "SELECT * FROM #{table_name} WHERE ? = ?"
