@@ -67,9 +67,7 @@ class Student < InteractiveRecord
   end
 
   def self.find_by(options)
+    values = options.map{|k,v| key = k, value = v}
     binding.pry
-    options.each do |property, value|
-      self.send("#{property}=", value)
-    end
   end
 end
