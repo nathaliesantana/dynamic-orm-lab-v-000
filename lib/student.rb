@@ -34,15 +34,16 @@ class Student < InteractiveRecord
   self.column_names.each { |attribute| attr_accessor attribute.to_sym }
 
   def table_name_for_insert
-  self.class.table_name  
+  self.class.table_name
   end
 
   def col_names_for_insert
+    binding.pry
     self.class.column_names.delete_if {|col| col == "id"}
   end
 
   def values_for_insert
-    
+
   end
 
 end
