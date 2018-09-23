@@ -42,7 +42,11 @@ class Student < InteractiveRecord
   end
 
   def values_for_insert
-    values = self
+    values = []
+    self.class.column_names.each do |col_name|
+      values << "'#{send(col_name)}'" unless send(col_name).nil?
+    end
+    values.join(", ")
   end
 
 end
