@@ -67,6 +67,7 @@ class Student < InteractiveRecord
   end
 
   def self.find_by_name(options={})
+    binding.pry
     options.each do |property, value|
       self.send("#{property}=", value)
     end
