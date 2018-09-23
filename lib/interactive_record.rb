@@ -68,8 +68,8 @@ class InteractiveRecord
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE #{key}= #{value}
+    WHERE #{key}= ?
     SQL
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql,value)
   end
 end
