@@ -65,7 +65,11 @@ class InteractiveRecord
     key = values[0].to_s
     value = values[1].downcase
 
-    sql = "SELECT * FROM #{self.table_name}"
+    sql = <<-SQL 
+    SELECT * 
+    FROM #{self.table_name}
+    WHERE grade = ?
+    SQL
     # binding.pry
     DB[:conn].execute(sql)
   end
