@@ -62,13 +62,13 @@ class InteractiveRecord
 
   def self.find_by(options)
     key = options.map{|k,v| key = k}.flatten[0].to_s
-    value = options.values
+    value = options.values[0]
     binding.pry
 
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE
+    WHERE #{key} = 
     SQL
     DB[:conn].execute(sql)
   end
