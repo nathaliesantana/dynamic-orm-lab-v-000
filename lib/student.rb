@@ -42,11 +42,9 @@ class Student < InteractiveRecord
   end
 
   def values_for_insert
-    values = []
-    self.each do |col_name|
-      # values << "'#{send(col_name)}'" unless send(col_name).nil?
-      binding.pry
-    end
+    values =[]
+    self.col_names_for_insert.each do |col_name|
+      col_name = self[1]
   end
 
 end
