@@ -64,13 +64,13 @@ class InteractiveRecord
     values = options.map{|k,v| key = k, value = v}.flatten.to_s
     key = values[0].to_s
     value = values[1].downcase
+    binding.pry
 
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE grade = 10
+    WHERE 
     SQL
-    # binding.pry
     DB[:conn].execute(sql)
   end
 end
