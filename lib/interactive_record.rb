@@ -61,7 +61,7 @@ class InteractiveRecord
   end
 
   def self.find_by(options)
-    key = options.map{|k,v| key = k}.flatten.to_s
+    key = options.map{|k,v| key = k}.flatten.[0].to_s
     value = options.values
     binding.pry
 
