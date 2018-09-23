@@ -61,9 +61,14 @@ class Student < InteractiveRecord
 
   end
 
-  def self.find_by_name(name)
+  def self.fin(name)
     sql = "SELECT * FROM #{table_name} WHERE name = ?"
     DB[:conn].execute(sql, name)
   end
+
+  def self.find_by_name(options={})
+    options.each do |property, value|
+      self.send("#{property}=", value)
+    end
 
 end
