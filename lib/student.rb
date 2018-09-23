@@ -70,6 +70,10 @@ class Student < InteractiveRecord
     values = options.map{|k,v| key = k, value = v}.flatten
     key = values[0]
     value = values[1]
+
+    sql = "SELECT * FROM #{table_name} WHERE ? = ?"
+    DB[:conn].execute(sql, key, value)
+    
     binding.pry
   end
 end
