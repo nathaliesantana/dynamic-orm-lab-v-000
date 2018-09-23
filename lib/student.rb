@@ -46,6 +46,7 @@ class Student < InteractiveRecord
     self.col_names_for_insert.each do |col_name|
       binding.pry
       col_name = self[1]
+    end
   end
 
 end
