@@ -68,7 +68,7 @@ class InteractiveRecord
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE grade = ?
+    WHERE grade = 10
     SQL
     # binding.pry
     DB[:conn].execute(sql,value)
