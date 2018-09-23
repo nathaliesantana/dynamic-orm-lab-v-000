@@ -72,7 +72,7 @@ class Student < InteractiveRecord
     value = values[1]
 
     sql = "SELECT * FROM #{table_name} WHERE ? = ?"
-    binding.pry
+    # binding.pry
     DB[:conn].execute(sql, key, value)
   end
 end
