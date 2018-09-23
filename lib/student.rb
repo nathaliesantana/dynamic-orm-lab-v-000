@@ -66,8 +66,10 @@ class Student < InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-  def self.find_by_name(hash)
+  def self.find_by_name(options={})
     binding.pry
-    
-
+    options.each do |property, value|
+      self.send("#{property}=", value)
+    end
+  end
 end
