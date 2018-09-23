@@ -68,7 +68,7 @@ class InteractiveRecord
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE #{key}= #{value}
+    WHERE #{self.key}= #{self.value}
     SQL
     DB[:conn].execute(sql)
   end
