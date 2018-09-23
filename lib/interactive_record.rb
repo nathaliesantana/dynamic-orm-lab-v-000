@@ -71,6 +71,6 @@ class InteractiveRecord
     WHERE grade = 10
     SQL
     # binding.pry
-    DB[:conn].execute(sql,value)
+    DB[:conn].execute(sql)
   end
 end
