@@ -30,8 +30,8 @@ class Student < InteractiveRecord
     end
   end
 
-  def attr_accessor
-    self.class.column_names.each { |attribute| attr_accessor attribute.to_sym }
-  end
+
+  self.column_names.each { |attribute| attr_accessor attribute.to_sym }
+
 
 end
