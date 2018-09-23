@@ -61,7 +61,7 @@ class InteractiveRecord
   end
 
   def self.find_by(options)
-    values = options.map{|k,v| key = k, value = v}.flatten
+    values = options.map{|k,v| key = k, value = v}.flatten.to_s
     key = values[0].to_s
     value = values[1].downcase
 
