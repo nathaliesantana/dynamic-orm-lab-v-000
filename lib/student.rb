@@ -43,8 +43,8 @@ class Student < InteractiveRecord
 
   def values_for_insert
     values =[]
+    binding.pry
     self.col_names_for_insert.each do |col_name|
-      binding.pry
       col_name = self[1]
     end
   end
