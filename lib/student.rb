@@ -67,7 +67,9 @@ class Student < InteractiveRecord
   end
 
   def self.find_by(options)
-    values = options.map{|k,v| key = k, value = v}
+    values = options.map{|k,v| key = k, value = v}.flatten
+    key = values[0]
+    value = values[1]
     binding.pry
   end
 end
