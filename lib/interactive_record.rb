@@ -63,7 +63,7 @@ class InteractiveRecord
   def self.find_by(options)
     key = options.map{|k,v| key = k}.flatten[0].to_s
     value = options.values[0]
-    # binding.pry
+    binding.pry
 
     sql = <<-SQL
     SELECT *
